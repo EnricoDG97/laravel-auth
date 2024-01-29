@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import { resolve } from "path";
+import {resolve} from "path";
 
 export default defineConfig({
     plugins: [
@@ -13,9 +13,9 @@ export default defineConfig({
         }),
     ],
     resolve: {
-       alias: {
-        "~resources": "/resources",
-        "~bootstrap": resolve(__dirname, "node_modules/bootstrap")
-       }     
+        alias: {
+            "~resources": "/resources",
+            "~bootstrap": resolve(__dirname, "node_modules/bootstrap")
+        }
     }
 });
