@@ -4,6 +4,9 @@
     <div class="container mt-5">
 
         <h2 class="text-center">Lista Progetti</h2>
+        <div class="container text-end">
+            <a class="text-center" href="{{ route('admin.projects.create') }}">Aggiungi Nuovo Progetto</a>
+        </div>
 
         <div class="row justify-content-center">
             <div class="col-10">
