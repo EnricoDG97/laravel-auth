@@ -21,7 +21,7 @@
                                 <th scope="row"> {{ $project->slug }}</th>
                                 <td class="w-50">{{ $project->description }}</td>
                                 <td class="w-25">
-                                    <a class="btn btn-success d-inline-block" href=""> 
+                                    <a class="btn btn-success d-inline-block" href="{{ route('admin.projects.show', ['project' => $project->slug]) }}"> 
                                         <i class="fa-solid fa-circle-info"></i>
                                     </a>
                                     <a class="btn btn-warning d-inline-block" href=""> 

@@ -42,7 +42,7 @@ Route::middleware(['auth', 'verified'])
         })->name('messages');
     
         // aggiungo rotta per il resource controller dei projects
-        Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
 
         // inserire qui altre srotte
     });
