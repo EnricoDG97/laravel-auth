@@ -27,9 +27,10 @@
                                     <a class="btn btn-success d-inline-block" href="{{ route('admin.projects.show', ['project' => $project->slug]) }}"> 
                                         <i class="fa-solid fa-circle-info"></i>
                                     </a>
-                                    <a class="btn btn-warning d-inline-block" href=""> 
+                                    <a class="btn btn-warning d-inline-block" href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"> 
                                         <i class="fa-solid fa-pen-to-square"></i>
                                      </a>
+
                                     <button type="submit" class="btn btn-danger d-inline-block">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>

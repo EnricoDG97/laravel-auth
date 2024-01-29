@@ -13,7 +13,7 @@
         </p>
 
         <div>
-            <a class="btn btn-warning d-inline-block" href=""> 
+            <a class="btn btn-warning d-inline-block" href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"> 
                 <i class="fa-solid fa-pen-to-square"></i>
              </a>
 
