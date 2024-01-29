@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,11 +33,17 @@ Route::middleware(['auth', 'verified'])
     // il prefisso invece è per l'url
     ->prefix('admin')
     ->group(function () {
+        // route dashboard admin
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+        // route di test
         Route::get('/messages', function() {
             return 'messages';
         })->name('messages');
+    
+        // aggiungo rotta per il resource controller dei projects
+        Route::resource('projects', ProjectController::class);
+
         // inserire qui altre srotte
     });
 
