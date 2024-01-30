@@ -7,6 +7,12 @@
         <div class="container text-end">
             <a class="text-center" href="{{ route('admin.projects.create') }}">Aggiungi Nuovo Progetto</a>
         </div>
+    
+        @if (session('message'))
+            <div class="alert alert-success mt-4">
+              {{ session('message') }}
+            </div>
+        @endif
 
         <div class="row justify-content-center">
             <div class="col-10">
@@ -30,10 +36,8 @@
                                     <a class="btn btn-warning d-inline-block" href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"> 
                                         <i class="fa-solid fa-pen-to-square"></i>
                                      </a>
-
-                                    <button type="submit" class="btn btn-danger d-inline-block">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
+                                    
+                                    @include('admin.projects.partials.btn_delete')
                                 </td>
                             </tr>
                         @endforeach
