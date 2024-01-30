@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArchivedController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,8 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         // route dashboard admin
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        // route archived
+        Route::get('/archived', [ArchivedController::class, 'index'])->name('archived');
 
         // route di test
         Route::get('/messages', function() {
@@ -44,7 +47,7 @@ Route::middleware(['auth', 'verified'])
         // aggiungo rotta per il resource controller dei projects
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
 
-        // inserire qui altre srotte
+        // inserire qui altre rotte
     });
 
 require __DIR__ . '/auth.php';

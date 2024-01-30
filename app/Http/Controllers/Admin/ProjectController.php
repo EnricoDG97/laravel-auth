@@ -54,6 +54,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        // dd($project);
         return view('admin.projects.show', compact('project'));
     }
 
@@ -77,9 +78,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+        // dd($project);
         $form_data = $request->validated();
         $project->update($form_data);
-        // dd($project);
         return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }
 
@@ -92,6 +93,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.projects.index')->with('message', "$project->title è stato rimosso");
+        return redirect()->route('admin.archived')->with('message', "$project->title è stato archiviato con successo");
+        // ->with('message', "$project->title è stato rimosso");
     }
 }

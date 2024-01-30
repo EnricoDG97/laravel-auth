@@ -69,6 +69,12 @@
                                     <i class="fa-solid fa-diagram-project"></i> Progetti
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.archived' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.archived') }}">
+                                    <i class="fa-solid fa-file-zipper"></i> Archiviati
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
