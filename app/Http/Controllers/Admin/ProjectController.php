@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -42,6 +43,12 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $project = new Project();
         $project->fill($form_data);
+        
+        if($request->hasFile('thumb')) {
+            $path = Storage::put('thumbnails', $request->thumb);
+            $project->thumb = $path;
+        }
+
         $project->save();
         return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }

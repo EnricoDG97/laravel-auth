@@ -7,6 +7,14 @@
         <div class="mt-4">
             Slug: {{ $project->slug }}
         </div>
+        
+        @if ($project->thumb)
+            <div class="mt-4">
+                <img src="{{ asset('storage/' . $project->thumb) }}" alt="">
+            </div>
+        @else
+            <p>Nessuna copertina disponibile.</p>
+        @endif
 
         <p class="mt-4">
             {{ $project->description }}
