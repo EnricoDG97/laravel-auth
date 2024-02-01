@@ -27,7 +27,7 @@
                                 <th scope="row"> {{ $project->slug }}</th>
                                 <td class="w-50">{{ $project->description }}</td>
                                 <td class="w-25">
-                                    {{-- @include('admin.projects.partials.btn_delete') --}}
+                                    @include('admin.projects.partials.btn_delete')
                                 </td>
                             </tr>
                         @endforeach
