@@ -5,7 +5,7 @@
 
         <h2 class="text-center">Lista Progetti</h2>
         <div class="container text-end">
-            <a class="text-center" href="{{ route('admin.projects.create') }}">Aggiungi Nuovo Progetto</a>
+            <a class="text-center btn btn-success" href="{{ route('admin.projects.create') }}">Aggiungi Nuovo Progetto</a>
         </div>
     
         @if (session('message'))
@@ -37,11 +37,12 @@
                                         <i class="fa-solid fa-pen-to-square"></i>
                                      </a>
                                     
-                                    @include('admin.projects.partials.btn_archieve')
+                                    @include('admin.partials.btn_archieve')
                                 </td>
                             </tr>
                         @endforeach
 
+                        @include('admin.partials.soft-delete-modal')
                     </tbody>
                 </table>
             </div>

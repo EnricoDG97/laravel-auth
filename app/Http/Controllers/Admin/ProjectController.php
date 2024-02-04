@@ -87,6 +87,16 @@ class ProjectController extends Controller
     {
         // dd($project);
         $form_data = $request->validated();
+        
+        // cancello l'mmagine precendente se presente e salvo la nuova
+        if($request->hasFile('thumb')) {
+            if($project->thumb) {
+                Storage::delete($project->thumb);
+            }
+            $path = Storage::put('thumbnails', $request->thumb);
+            $form_data['thumb'] = $path;
+        }
+
         $project->update($form_data);
         return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }
@@ -98,9 +108,9 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)
-    {
+    {   
+        // dd($project);
         $project->delete();
-        return redirect()->route('admin.archived')->with('message', "$project->title è stato archiviato con successo");
-        // ->with('message', "$project->title è stato rimosso");
+        return redirect()->route('admin.archived.index')->with('message', "$project->title è stato archiviato con successo");
     }
 }

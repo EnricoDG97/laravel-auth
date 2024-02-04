@@ -70,8 +70,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.archived' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.archived') }}">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.archived.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.archived.index') }}">
                                     <i class="fa-solid fa-file-zipper"></i> Archiviati
                                 </a>
                             </li>

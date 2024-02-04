@@ -36,18 +36,18 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         // route dashboard admin
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        // route archived
-        Route::get('/archived', [ArchivedController::class, 'index'])->name('archived');
 
-        // route di test
-        Route::get('/messages', function() {
+        // route di test per ottenere i messaggi dagli errori
+        Route::get('/messages', function () {
             return 'messages';
         })->name('messages');
-    
+
         // aggiungo rotta per il resource controller dei projects
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
-
-        // inserire qui altre rotte
+        // aggiungo rotta per il resource controller dei projects archived
+        Route::resource('archived', ArchivedController::class)->parameters(['projects' => 'project:slug']);
     });
+
+
 
 require __DIR__ . '/auth.php';

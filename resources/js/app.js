@@ -7,11 +7,37 @@ import.meta.glob([
 ]);
 
 
-// GESTIONE MODAL - DELETE
-const buttons = document.querySelectorAll('.btn-delete');
-console.log(buttons);
+// GESTIONE MODAL - ARCHIEVE
+const archieveButtons = document.querySelectorAll('.btn-archieve');
+// console.log(archieveButtons);
 
-buttons.forEach(button => {
+archieveButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        // console.log('clicked');
+        
+        const deleteModal = new bootstrap.Modal('#soft-delete-modal');
+        
+        const title = button.getAttribute('data-title');
+        document.getElementById('title-to-archieve').innerHTML = title;
+        
+        document.getElementById('button-delete').addEventListener('click', () => {
+            // console.log(button.parentElement);
+            button.parentElement.submit();
+        })
+
+        deleteModal.show();
+    });
+})
+ // fine MODAL - ARCHIEVE
+
+
+ 
+// GESTIONE MODAL - DELETE
+const deleteButtons = document.querySelectorAll('.btn-delete');
+// console.log(deleteButtons);
+
+deleteButtons.forEach(button => {
     button.addEventListener('click', (event) => {
         event.preventDefault();
         // console.log('clicked');
@@ -29,4 +55,4 @@ buttons.forEach(button => {
         deleteModal.show();
     });
 })
- // fine MODAL - DELETE
+// fine MODAL - DELETE

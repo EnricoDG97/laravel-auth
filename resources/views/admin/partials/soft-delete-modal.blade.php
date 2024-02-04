@@ -1,4 +1,4 @@
-<div class="modal" tabindex="-1" id="delete-modal">
+<div class="modal" tabindex="-1" id="soft-delete-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -7,7 +7,7 @@
         </div>
         <div class="modal-body">
           <p>Archivia il progetto:
-            <span id="title-to-delete"></span>
+            <span id="title-to-archieve"></span>
           </p>
         </div>
         <div class="modal-footer">

@@ -25,9 +25,7 @@
                 <i class="fa-solid fa-pen-to-square"></i>
              </a>
 
-            <button type="submit" class="btn btn-danger d-inline-block">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
+             @include('admin.partials.btn_archieve')
 
         </div>
     </div>
